@@ -4,9 +4,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.js",
+  entry: "./src/index.ts",
   output: {
-    filename: "main.js",
+    filename: "index.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
@@ -22,6 +22,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.ts$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
+      {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
       },
@@ -32,6 +37,15 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
+      },
+      {
+        test: /\.ttf$/,
+        use: "file-loader",
+        exclude: /node_modules/,
+        type: "asset/resource", // Automatically handles copying the font to the output directory
+        generator: {
+          filename: "fonts/[name][ext][query]", // Customize output folder for fonts
+        },
       },
     ],
   },
