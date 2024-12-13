@@ -1,11 +1,14 @@
-import "./styles.css";
-import "./normalize.css";
-
-//.container fades in after 200ms
-document.addEventListener("DOMContentLoaded", function () {
-  const container = document.querySelector(".container");
-  setTimeout(function () {
-    container.classList.toggle("hide");
-    container.classList.toggle("show");
-  }, 200);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+require("./styles.css");
+require("./normalize.css");
+require("./assets/images/logo.svg");
+function toggleVisibility(element) {
+    element.classList.toggle("hide");
+    element.classList.toggle("show");
+}
+const welcomeMessage = document.querySelector(".container");
+document.addEventListener("DOMContentLoaded", () => {
+    if (welcomeMessage)
+        toggleVisibility(welcomeMessage);
 });
