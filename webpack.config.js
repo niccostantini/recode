@@ -35,8 +35,11 @@ module.exports = {
         loader: "html-loader",
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: 'asset/resource', // Handles image files
+        generator: {
+          filename: 'assets/images/[name][ext]', // Output location for images
+        },
       },
       {
         test: /\.ttf$/,

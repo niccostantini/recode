@@ -31,31 +31,80 @@ header {
 
     display: flex;
     flex-direction: column;
+    gap: 30px;
     align-items: center;
     justify-content: center;
 
     #logoimg {
-        width: 330px;
+        width: 300px;
         padding-top: 30px;
+        position: sticky;
+        top: 0;
     }
 
     nav ul {
+        padding: 0;
         display: flex;
-        gap: 20px;
+        gap: 25px;
         width: 50vw;
-        justify-content: space-between;
-
+        justify-content: space-evenly;
         list-style: none;
 
         li {
+
+            .bg-img {
+                position: absolute;
+                filter: opacity(0.7);
+                transform: translateY(-12px) translateX(-15px);
+                width: 50px;
+                height: 50px;
+                z-index: -1;
+                opacity: 0;
+            }
+
             padding: 3px 5px;
+
             a {
                 text-decoration: none;
                 color: var(--link-color);
-                font-size: 1.2em;
+                font-size: 1.4em;
             }
         }
 
     }
 
+}
+
+.fade-in {
+    -webkit-animation: fadeIn 0.5s ease-in-out forwards;
+    -o-animation: fadeIn 0.5s ease-in-out forwards;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s ease-in-out forwards;
+    -o-animation: fadeOut 0.5s ease-in-out forwards;
+    animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+.active {
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.8;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 0.8;
+    }
+    to {
+        opacity: 0;
+    }
 }
