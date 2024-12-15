@@ -35,6 +35,11 @@ navElements.forEach((navElement) => {
     const bgImg = navElement.querySelector(".bg-img");
     if (bgImg) {
         bgImg.style.backgroundImage = `url(${colorMap[color]})`;
+        document.addEventListener("DOMContentLoaded", () => {
+            var _a, _b;
+            (_a = document.querySelector("#home-link")) === null || _a === void 0 ? void 0 : _a.classList.add("active");
+            (_b = document.querySelector("#home-link")) === null || _b === void 0 ? void 0 : _b.classList.add("fade-in");
+        });
         navElement.addEventListener("mouseover", () => {
             bgImg.classList.remove("fade-out");
             bgImg.classList.add("fade-in");
