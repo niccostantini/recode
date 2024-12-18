@@ -11,6 +11,7 @@ const cyan_svg_1 = __importDefault(require("./assets/images/cyan.svg"));
 const yellow_svg_1 = __importDefault(require("./assets/images/yellow.svg"));
 const black_svg_1 = __importDefault(require("./assets/images/black.svg"));
 const navElements = document.querySelectorAll(".nav-element");
+const logoImg = document.querySelector("#logo-img");
 const colorMap = {
     magenta: magenta_svg_1.default,
     cyan: cyan_svg_1.default,
@@ -55,6 +56,7 @@ navElements.forEach((navElement) => {
                 img.classList.add("fade-out");
             });
             bgImg.classList.add("active");
+            logoImg === null || logoImg === void 0 ? void 0 : logoImg.classList.add("shrink");
         });
     }
 });

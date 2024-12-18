@@ -7,6 +7,7 @@ import yellow from "./assets/images/yellow.svg";
 import black from "./assets/images/black.svg";
 
 const navElements: NodeListOf<HTMLLIElement> = document.querySelectorAll(".nav-element");
+const logoImg: HTMLImageElement | null = document.querySelector("#logo-img");
 
 const colorMap: Record<string, string> = {
   magenta,
@@ -55,6 +56,7 @@ navElements.forEach((navElement) => {
         img.classList.add("fade-out");
       });
       bgImg.classList.add("active");
+      logoImg?.classList.add("shrink")
     });
   }
 

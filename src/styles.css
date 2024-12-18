@@ -35,11 +35,17 @@ header {
     align-items: center;
     justify-content: center;
 
-    #logoimg {
+    #logo-img {
         width: 300px;
         padding-top: 30px;
         position: sticky;
         top: 0;
+    }
+
+    .shrink {
+        -webkit-animation: shrink 0.5s forwards;
+        -o-animation: shrink 0.5s forwards;
+        animation: shrink 0.5s forwards;
     }
 
     nav ul {
@@ -106,5 +112,23 @@ header {
     }
     to {
         opacity: 0;
+    }
+}
+
+@keyframes shrink {
+    from {
+        width: 300px
+    }
+    to {
+        width: 150px;
+    }
+}
+
+@keyframes magnify {
+    from {
+        width: 150px
+    }
+    to {
+        width: 300px;
     }
 }
