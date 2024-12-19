@@ -10,6 +10,9 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
+  resolve: {
+    extensions: [".ts", ".js"]
+  },
   devtool: "eval-source-map",
   devServer: {
     watchFiles: ["./src/template.html"],
@@ -24,6 +27,9 @@ module.exports = {
       {
         test: /\.ts$/,
         use: "ts-loader",
+        options: {
+          configFile: "tsconfig.json"
+        },
         exclude: /node_modules/,
       },
       {
