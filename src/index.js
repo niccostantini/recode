@@ -1,22 +1,17 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-require("./styles.css");
-require("./normalize.css");
-require("./assets/images/logo.svg");
-const magenta_svg_1 = __importDefault(require("./assets/images/magenta.svg"));
-const cyan_svg_1 = __importDefault(require("./assets/images/cyan.svg"));
-const yellow_svg_1 = __importDefault(require("./assets/images/yellow.svg"));
-const black_svg_1 = __importDefault(require("./assets/images/black.svg"));
+import "./styles.css";
+import "./normalize.css";
+import "./assets/images/logo.svg";
+import magenta from "./assets/images/magenta.svg";
+import cyan from "./assets/images/cyan.svg";
+import yellow from "./assets/images/yellow.svg";
+import black from "./assets/images/black.svg";
 const navElements = document.querySelectorAll(".nav-element");
 const logoImg = document.querySelector("#logo-img");
 const colorMap = {
-    magenta: magenta_svg_1.default,
-    cyan: cyan_svg_1.default,
-    yellow: yellow_svg_1.default,
-    black: black_svg_1.default,
+    magenta,
+    cyan,
+    yellow,
+    black,
 };
 const checkColor = (navElement) => {
     if (navElement.classList.contains("magenta"))
