@@ -17,6 +17,8 @@
     --text-color: #332507;
     --link-color: #59471E;
     --popup-bg-color: #e3af5a;
+
+    --langSwitch-right: calc(-36.5px * 5);
 }
 
 body {
@@ -29,7 +31,7 @@ body {
 
 @keyframes expandLangMenu {
     from {
-        right: calc(-40px * 5);
+        right: var(--langSwitch-right);
     } to {
         right: 10px;
     }
@@ -43,7 +45,7 @@ body {
     from {
         right: 10px;
     } to {
-        right: calc(-40px * 5);
+        right: var(--langSwitch-right);
     }
 }
 
@@ -64,7 +66,7 @@ header {
 
         position: fixed;
         top: 10px;
-        right: calc(-40px * 5);
+        right: var(--langSwitch-right);
         -webkit-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.75);
         -moz-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.75);
         box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.75);
