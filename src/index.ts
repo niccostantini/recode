@@ -45,10 +45,12 @@ languageSwitchRadio?.addEventListener("mouseout", () => {
 
 let language: string = "en"; //DEFAULT LANGUAGE
 
+// Get the user's language
 function getUserLang(): void {
   language = navigator.language.split('-')[0]; // Get the language code (e.g., 'en' from 'en-US')
 }
 
+// Highlight the selected language radio button
 function highlightSelectedLanguage(): void {
   const selectedLanguageRadio = document.querySelector<HTMLInputElement>(`input[id="${language}-radio"]`);
   if (selectedLanguageRadio) {
@@ -56,6 +58,7 @@ function highlightSelectedLanguage(): void {
   }
 }
 
+// Populate the navigation bar with the selected language
 function populateNavBar(): void {
   const langData = raw_languages[language] || raw_languages["en"]; // Default to English if the user's language is not available
 
@@ -67,11 +70,13 @@ function populateNavBar(): void {
   document.querySelector<HTMLAnchorElement>("#contact-link")!.textContent = navMenu.contact;
 }
 
+// Choose the language
 function getAndSetLanguage(): void {
   getUserLang();
   populateNavBar();
 }
 
+// Change the language
 function changeLanguage(lang: string): void {
   language = lang;
   console.log(lang + " " + language)
@@ -79,6 +84,7 @@ function changeLanguage(lang: string): void {
   highlightSelectedLanguage();
 }
 
+// Event listener for the language radio buttons
 const languageForm = document.querySelector<HTMLFormElement>("#language-switch");
 languageForm?.addEventListener("change", (e: Event) => {
   const target = e.target as HTMLInputElement;
@@ -86,18 +92,20 @@ languageForm?.addEventListener("change", (e: Event) => {
   populateNavBar();
 });
 
+// Set the language
 getAndSetLanguage();
 
 /********** *************/
 /** COLOR DROP HANDLING */
+/********** *************/
 // for each nav element check the color and set the background image
 navElements.forEach((navElement) => {
 
   const color: string = checkColor(navElement);
-  console.log(color);
 
   const bgImg: HTMLDivElement | null = navElement.querySelector<HTMLDivElement>(".bg-img")
 
+  // Set the background image based on the color
   if (bgImg) {
     bgImg.style.backgroundImage = `url(${colorMap[color]})`;
 
@@ -106,25 +114,32 @@ navElements.forEach((navElement) => {
       document.querySelector<HTMLDivElement>("#home-link")?.classList.add("fade-in");
     })
 
+    // Add event listeners for the hover effect - mousein
     navElement.addEventListener("mouseover", () => {
       bgImg.classList.remove("fade-out");
 
       bgImg.classList.add("fade-in");
     });
+
+    // Add event listeners for the hover effect - mouseout
     navElement.addEventListener("mouseout", () => {
       if (!bgImg.classList.contains("active")) {
         bgImg.classList.add("fade-out");
       }
     });
 
+    // Add event listeners for the click effect
     navElement.addEventListener("click", (e: MouseEvent) => {
+      // Remove the active class from all the background images and add the fade-out class
       document.querySelectorAll(".bg-img.active").forEach((img) => {
         img.classList.remove("active");
         img.classList.add("fade-out");
       });
+      // Add the active class to the clicked background image
+      // Remove the fade-out class and add the
+      // fade-in class to the clicked background image
       bgImg.classList.add("active");
       logoImg?.classList.add("shrink")
     });
   }
-
 });
