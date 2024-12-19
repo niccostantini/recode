@@ -64,6 +64,7 @@ function populateNavBar() {
 function getAndSetLanguage() {
     getUserLang();
     populateNavBar();
+    highlightSelectedLanguage();
 }
 // Change the language
 function changeLanguage(lang) {
