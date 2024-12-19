@@ -35,6 +35,52 @@ header {
     align-items: center;
     justify-content: center;
 
+    .language-switch-radio {
+
+        position: fixed;
+        top: 10px;
+        right: calc(-40px * 5);
+        -webkit-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.75);
+
+        border-radius: 5px;
+
+        form {
+
+            display: flex;
+            gap: 5px;
+            background-color: var(--popup-bg-color);
+            border-radius: inherit;
+            padding: 3px;
+            input {
+                appearance: none;
+                opacity: 0;
+            }
+
+            label:has(input:disabled) {
+                background-color: #be7b0d;
+            }
+
+            label {
+                padding: 8px 8px 5px 5px;
+                border-radius: 5px;
+                transition-duration: 0.3s;
+                cursor: pointer;
+            }
+
+            label:has(input:checked) {
+                background-color: var(--link-color);
+                color: var(--bg-color);
+            }
+
+            #arabic-lang {
+                padding: 3px 3px 3px 1px;
+            }
+        }
+        transition: all ease-in-out 0.5s;
+    }
+
     #logo-img {
         width: 300px;
         padding-top: 30px;
