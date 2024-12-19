@@ -24,6 +24,16 @@ const checkColor = (navElement: HTMLLIElement) => {
   else return "black";
 }
 
+/** LANG MENU SHOW/HIDE **/
+languageSwitchRadio?.addEventListener("mouseover", () => {
+  languageSwitchRadio.classList.remove("hide");
+  languageSwitchRadio.classList.add("expand");
+});
+
+languageSwitchRadio?.addEventListener("mouseout", () => {
+  languageSwitchRadio.classList.remove("expand");
+  languageSwitchRadio.classList.add("hide");
+});
 navElements.forEach((navElement) => {
 
   const color: string = checkColor(navElement);

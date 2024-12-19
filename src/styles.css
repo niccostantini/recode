@@ -26,6 +26,30 @@ body {
     color: #24292e;
 }
 
+@keyframes expandLangMenu {
+    from {
+        right: calc(-40px * 5);
+    } to {
+        right: 10px;
+    }
+}
+
+.expand {
+    animation: expandLangMenu 0.5s forwards;
+}
+
+@keyframes hideLangMenu {
+    from {
+        right: 10px;
+    } to {
+        right: calc(-40px * 5);
+    }
+}
+
+.hide {
+    animation: hideLangMenu 0.5s forwards;
+}
+
 header {
     font-family: Geo;
 
@@ -80,6 +104,7 @@ header {
         }
         transition: all ease-in-out 0.5s;
     }
+
 
     #logo-img {
         width: 300px;
