@@ -8,7 +8,6 @@
       "*": ["src/*"]
     },
     "resolveJsonModule": true,
-    "outDir": "./dist",
     "rootDir": ".",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
