@@ -18,7 +18,7 @@
     --link-color: #59471E;
     --popup-bg-color: #e3af5a;
 
-    --langSwitch-right: calc(-36.5px * 5);
+    --langSwitch-right: calc(-47.5px * 5);
 }
 
 body {
@@ -94,6 +94,7 @@ header {
                 border-radius: 5px;
                 transition-duration: 0.3s;
                 cursor: pointer;
+                font-size: 26px;
             }
 
             label:has(input:checked) {
