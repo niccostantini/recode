@@ -46,7 +46,7 @@ const raw_languages: Record<string, LanguageData> = {
   ar: {
     navMenu: {
       home: "الرئيسية",
-      about: "من نحن",
+      about: "من أنا",
       projects: "مشاريع",
       contact: "اتصلوا بي"
     }
