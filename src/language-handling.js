@@ -34,7 +34,7 @@ const raw_languages = {
     ar: {
         navMenu: {
             home: "الرئيسية",
-            about: "من نحن",
+            about: "من أنا",
             projects: "مشاريع",
             contact: "اتصلوا بي"
         }

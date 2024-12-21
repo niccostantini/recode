@@ -1,6 +1,7 @@
 import "./styles.css";
 import "./normalize.css";
 import "./assets/images/logo.svg";
+import "./assets/images/language.svg";
 import magenta from "./assets/images/magenta.svg";
 import cyan from "./assets/images/cyan.svg";
 import yellow from "./assets/images/yellow.svg";
