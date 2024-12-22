@@ -1,5 +1,7 @@
+var _a;
 import React from "react";
 import { createRoot } from "react-dom/client";
+import 'boxicons';
 import Main from './Main';
 import Home from "./Home";
 import About from "./About";
@@ -25,6 +27,7 @@ const colorMap = {
 };
 // Map the background image ID to the component
 const componentMap = {
+    Main,
     Home,
     About,
     Projects,
@@ -150,15 +153,28 @@ navElements.forEach((navElement) => {
             // Remove the fade-out class and add the
             // fade-in class to the clicked background image
             bgImg.classList.add("active");
+            logoImg === null || logoImg === void 0 ? void 0 : logoImg.classList.remove("magnify");
             logoImg === null || logoImg === void 0 ? void 0 : logoImg.classList.add("shrink");
             //Use React to render the component that corresponds to the clicked nav link
-            root.render(React.createElement(MyComponent, { bgImgId: bgImg.id }));
+            if (bgImg)
+                root.render(React.createElement(MyComponent, { bgImgId: bgImg.id }));
+            else
+                throw new Error("Could not find the background image element!");
         });
     }
 });
+(_a = document.querySelector("#logo-img")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", (e) => {
+    root.render(React.createElement(MyComponent, { bgImgId: "Main" }));
+    document.querySelectorAll(".bg-img.active").forEach((img) => {
+        img.classList.remove("active");
+        img.classList.add("fade-out");
+    });
+    logoImg === null || logoImg === void 0 ? void 0 : logoImg.classList.remove("shrink");
+    logoImg === null || logoImg === void 0 ? void 0 : logoImg.classList.add("magnify");
+});
 const rootElement = document.querySelector('main');
 if (!rootElement) {
-    throw new Error("Could not find 'root' element to mount to!");
+    throw new Error("Could not find 'main' element to mount to!");
 }
 const root = createRoot(rootElement);
 root.render(React.createElement(Main, null));

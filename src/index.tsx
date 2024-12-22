@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import { createRoot } from "react-dom/client";
+import 'boxicons';
 
 import Main from './Main';
 import Home from "./Home";
@@ -31,6 +32,7 @@ const colorMap: Record<string, string> = {
 
 // Map the background image ID to the component
 const componentMap: Record<string, React.ComponentType<any>> = {
+  Main,
   Home,
   About,
   Projects,
@@ -198,7 +200,7 @@ document.querySelector("#logo-img")?.addEventListener("click", (e) => {
 
 const rootElement = document.querySelector('main');
 if (!rootElement) {
-  throw new Error("Could not find 'root' element to mount to!");
+  throw new Error("Could not find 'main' element to mount to!");
 }
 const root = createRoot(rootElement);
 
