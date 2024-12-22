@@ -8,6 +8,7 @@ interface NavMenu {
 
 interface LanguageData {
   navMenu: NavMenu;
+  Main: string;
 }
 
 const raw_languages: Record<string, LanguageData> = {
@@ -17,7 +18,8 @@ const raw_languages: Record<string, LanguageData> = {
       about: "About",
       projects: "Projects",
       contact: "Contact"
-    }
+    },
+    Main: "it looks like you landed on"
   },
   fr: {
     navMenu: {
@@ -25,7 +27,8 @@ const raw_languages: Record<string, LanguageData> = {
       about: "À propos",
       projects: "Projets",
       contact: "Contact"
-    }
+    },
+    Main: "il semble que vous ayez atterri sur"
   },
   it: {
     navMenu: {
@@ -33,7 +36,8 @@ const raw_languages: Record<string, LanguageData> = {
       about: "Chi sono",
       projects: "Progetti",
       contact: "Contatti"
-    }
+    },
+    Main: "sembra che tu sia atterratə su"
   },
   es: {
     navMenu: {
@@ -41,7 +45,8 @@ const raw_languages: Record<string, LanguageData> = {
       about: "Quien soy",
       projects: "Proyectos",
       contact: "Contactos"
-    }
+    },
+    Main: "parece que has aterrizado en"
   },
   ar: {
     navMenu: {
@@ -49,7 +54,8 @@ const raw_languages: Record<string, LanguageData> = {
       about: "من أنا",
       projects: "مشاريع",
       contact: "اتصلوا بي"
-    }
+    },
+    Main: "يبدو أنك هبطت على"
   }
 };
 
