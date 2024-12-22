@@ -18,7 +18,9 @@ function writeReCode(element: HTMLElement | null) {
     const span = document.createElement("span");
     span.textContent = char;
     if (highlightChars.includes(char)) {
-      span.style.color = "blue";
+      span.style.color = "var(--link-color)";
+    } else {
+      span.style.color = "var(--text-color)";
     }
     return span;
   };
