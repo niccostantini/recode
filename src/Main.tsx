@@ -1,7 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
 import "./Main.css";
-import "./normalize.css";
-import "./styles.css"
 
 import { raw_languages } from "./language-handling";
 
