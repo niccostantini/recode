@@ -61,6 +61,10 @@ function populateNavBar() {
     document.querySelector("#projects-link").textContent = navMenu.projects;
     document.querySelector("#contact-link").textContent = navMenu.contact;
 }
+// Populate the <main> element with the selected language
+function populateMain() {
+    const main = document.querySelector("main");
+}
 // Choose the language
 function getAndSetLanguage() {
     getUserLang();

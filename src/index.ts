@@ -6,7 +6,7 @@ import magenta from "./assets/images/magenta.svg";
 import cyan from "./assets/images/cyan.svg";
 import yellow from "./assets/images/yellow.svg";
 import black from "./assets/images/black.svg";
-import { raw_languages, NavMenu, LanguageData } from "./language-handling";
+import { raw_languages } from "./language-handling";
 
 
 const navElements: NodeListOf<HTMLLIElement> = document.querySelectorAll(".nav-element");
@@ -69,6 +69,11 @@ function populateNavBar(): void {
   document.querySelector<HTMLAnchorElement>("#about-link")!.textContent = navMenu.about;
   document.querySelector<HTMLAnchorElement>("#projects-link")!.textContent = navMenu.projects;
   document.querySelector<HTMLAnchorElement>("#contact-link")!.textContent = navMenu.contact;
+}
+
+// Populate the <main> element with the selected language
+function populateMain(): void {
+  const main = document.querySelector<HTMLDivElement>("main");
 }
 
 // Choose the language
