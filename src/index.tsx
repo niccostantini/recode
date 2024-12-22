@@ -176,12 +176,24 @@ navElements.forEach((navElement) => {
       // Remove the fade-out class and add the
       // fade-in class to the clicked background image
       bgImg.classList.add("active");
+      logoImg?.classList.remove("magnify");
       logoImg?.classList.add("shrink")
 
       //Use React to render the component that corresponds to the clicked nav link
-      root.render(<MyComponent bgImgId={bgImg.id} />);
+      if (bgImg) root.render(<MyComponent bgImgId={bgImg.id} />)
+      else throw new Error("Could not find the background image element!");
     });
   }
+});
+
+document.querySelector("#logo-img")?.addEventListener("click", (e) => {
+  root.render(<MyComponent bgImgId={"Main"} />)
+  document.querySelectorAll(".bg-img.active").forEach((img) => {
+    img.classList.remove("active");
+    img.classList.add("fade-out");
+  });
+  logoImg?.classList.remove("shrink");
+  logoImg?.classList.add("magnify");
 });
 
 const rootElement = document.querySelector('main');
