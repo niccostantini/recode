@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es6",
     "module": "es6",
+    "jsx": "react",
     "moduleResolution": "node",
     "baseUrl": "./",
     "paths": {
@@ -15,5 +16,5 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
 }
