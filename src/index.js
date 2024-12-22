@@ -1,3 +1,8 @@
+import React from "react";
+import { createRoot } from "react-dom/client";
+import Main from './Main';
+import Home from "./Home";
+import About from "./About";
 import "./styles.css";
 import "./normalize.css";
 import "./assets/images/logo.svg";
@@ -9,12 +14,31 @@ import black from "./assets/images/black.svg";
 import { raw_languages } from "./language-handling";
 const navElements = document.querySelectorAll(".nav-element");
 const logoImg = document.querySelector("#logo-img");
+// Map the color to the background image
 const colorMap = {
     magenta,
     cyan,
     yellow,
     black,
 };
+// Map the background image ID to the component
+const componentMap = {
+    Home,
+    About,
+    //Projects,
+    //Contact
+};
+function MyComponent({ bgImgId }) {
+    // Look up the component in the map
+    const SelectedComponent = componentMap[bgImgId];
+    if (!SelectedComponent) {
+        return React.createElement("div", null,
+            "Unknown component ID: ",
+            bgImgId);
+    }
+    // Render the matched component
+    return React.createElement(SelectedComponent, null);
+}
 const checkColor = (navElement) => {
     if (navElement.classList.contains("magenta"))
         return "magenta";
@@ -125,6 +149,14 @@ navElements.forEach((navElement) => {
             // fade-in class to the clicked background image
             bgImg.classList.add("active");
             logoImg === null || logoImg === void 0 ? void 0 : logoImg.classList.add("shrink");
+            //Use React to render the component that corresponds to the clicked nav link
+            root.render(React.createElement(MyComponent, { bgImgId: bgImg.id }));
         });
     }
 });
+const rootElement = document.querySelector('main');
+if (!rootElement) {
+    throw new Error("Could not find 'root' element to mount to!");
+}
+const root = createRoot(rootElement);
+root.render(React.createElement(Main, null));
