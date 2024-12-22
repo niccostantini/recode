@@ -4,6 +4,8 @@ import { createRoot } from "react-dom/client";
 import Main from './Main';
 import Home from "./Home";
 import About from "./About";
+import Contact from "./Contact";
+import Projects from "./Projects";
 
 import "./styles.css";
 import "./normalize.css";
@@ -31,8 +33,8 @@ const colorMap: Record<string, string> = {
 const componentMap: Record<string, React.ComponentType<any>> = {
   Home,
   About,
-  //Projects,
- //Contact
+  Projects,
+  Contact
 };
 
 function MyComponent({ bgImgId }: { bgImgId: string }) {
