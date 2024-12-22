@@ -26,7 +26,11 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: #24292e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+
 }
 
 @keyframes expandLangMenu {
@@ -123,6 +127,12 @@ header {
         animation: shrink 0.5s forwards;
     }
 
+    .magnify {
+        -webkit-animation: magnify 0.5s forwards;
+        -o-animation: magnify 0.5s forwards;
+        animation: magnify 0.5s forwards;
+    }
+
     nav ul {
         padding: 0;
         display: flex;
@@ -170,6 +180,22 @@ header {
 
 .active {
     opacity: 1;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--link-color);
+    color: var(--bg-color);
+    font-size: 1.2em;
+
+    div {
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+    }
 }
 
 @keyframes fadeIn {
