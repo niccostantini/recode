@@ -23,7 +23,6 @@ function About() {
     const target = event.target as HTMLInputElement;
     if (target.name === "lang") {
       setLanguage(target.value);
-      let title = raw_languages[target.value].About.philosophy[0];
     }
   };
 
@@ -39,9 +38,9 @@ function About() {
   let whatIDoSewingText = raw_languages[language].About.what_i_do.sewing[1];
 
   let journeyTitle = raw_languages[language].About.journey[0];
-  let journeyFirstParagraph = raw_languages[language].About.journey[1];
-  let journeySecondParagraph = raw_languages[language].About.journey[2];
-  let journeyThirdParagraph = raw_languages[language].About.journey[3];
+  let journeyParagraphs = new Array(raw_languages[language].About.journey[1],
+                                               raw_languages[language].About.journey[2],
+                                               raw_languages[language].About.journey[3]);
 
   useEffect(() => {
     // Find your language-switch <form> in the DOM (from template.html)
@@ -78,9 +77,9 @@ function About() {
 
       <div className={language == "ar" ? "paragraph ar" : "paragraph"}>
         <h2>{journeyTitle}</h2>
-        <p>{journeyFirstParagraph}</p>
-        <p>{journeySecondParagraph}</p>
-        <p>{journeyThirdParagraph}</p>
+        {journeyParagraphs.map((para, index) => (
+          <p key={index}>{para}</p>
+        ))}
       </div>
 
     </div>

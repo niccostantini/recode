@@ -14,19 +14,25 @@ main {
     .paragraph {
         max-width: 800px; /* Optional: Limits the width for better readability */
         width: 100%; /* Ensures the div takes full width available */
-    }
 
-    .paragraph h2 {
-        margin-bottom: 10px; /* Adds space below headings */
-    }
+        p {
+            margin-bottom: 10px; /* Adds space below paragraphs */
+            line-height: 1.6; /* Improves readability */
+        }
 
-    .paragraph p {
-        margin-bottom: 10px; /* Adds space below paragraphs */
-        line-height: 1.6; /* Improves readability */
+        h2 {
+            margin-bottom: 10px; /* Adds space below headings */
+            font-family: Geo, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 40px;
+        }
     }
 
     .ar {
         text-align: right; /* Aligns text to the right for arabic-based scripts*/
         font-size: x-large; /* Increases font size for better readability */
     }
+}
+
+#container > :last-child {
+    padding-bottom: 70px; /* Add padding to last element */
 }
