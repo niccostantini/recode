@@ -34,13 +34,22 @@ function writeReCode(element: HTMLElement | null) {
   });
 }
 
-let translation: string = raw_languages.en.Main;
 
 function Main() {
   const headingRef = useRef<HTMLHeadingElement>(null);
 
+
+  const getLanguage = () => {
+    // Get the language based on the selection in #language_switch
+    const form = document.querySelector("#language-switch") as HTMLFormElement;
+    if (!form) return "en";
+    const lang = new FormData(form).get("lang");
+    return lang ? lang.toString() : "en";
+  };
+
   // Track the user’s selected language
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState(getLanguage());
+  let translation = raw_languages[language]?.Main || raw_languages.en.Main;
 
   useEffect(() => {
     // Run the ReCode animation on <h1> after component mounts
