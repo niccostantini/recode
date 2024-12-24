@@ -33,7 +33,6 @@ const colorMap: Record<string, string> = {
 // Map the background image ID to the component
 const componentMap: Record<string, React.ComponentType<any>> = {
   Main,
-  Home,
   About,
   Projects,
   Contact

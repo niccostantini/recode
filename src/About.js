@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import "./About.css";
 import { raw_languages } from "./language-handling";
-let translation = raw_languages.en.About;
 function About() {
     const headingRef = useRef(null);
     const getLanguage = () => {

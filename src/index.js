@@ -3,7 +3,6 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import 'boxicons';
 import Main from './Main';
-import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
 import Projects from "./Projects";
@@ -28,7 +27,6 @@ const colorMap = {
 // Map the background image ID to the component
 const componentMap = {
     Main,
-    Home,
     About,
     Projects,
     Contact
