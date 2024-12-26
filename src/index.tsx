@@ -3,7 +3,6 @@ import { createRoot } from "react-dom/client";
 import 'boxicons';
 
 import Main from './Main';
-import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
 import Projects from "./Projects";
