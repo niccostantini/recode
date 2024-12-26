@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import "./Contact.css";
 function Contact() {
     const getLanguage = () => {
         // Get the language based on the selection in #language_switch
