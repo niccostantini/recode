@@ -70,15 +70,10 @@ function populateNavBar(): void {
 
   const navMenu = langData.navMenu;
 
-  document.querySelector<HTMLAnchorElement>("#home-link")!.textContent = navMenu.home;
-  document.querySelector<HTMLAnchorElement>("#about-link")!.textContent = navMenu.about;
-  document.querySelector<HTMLAnchorElement>("#projects-link")!.textContent = navMenu.projects;
-  document.querySelector<HTMLAnchorElement>("#contact-link")!.textContent = navMenu.contact;
-}
-
-// Populate the <main> element with the selected language
-function populateMain(): void {
-  const main = document.querySelector<HTMLDivElement>("main");
+  document.querySelector<HTMLAnchorElement>("#Home-link")!.textContent = navMenu.home;
+  document.querySelector<HTMLAnchorElement>("#About-link")!.textContent = navMenu.about;
+  document.querySelector<HTMLAnchorElement>("#Projects-link")!.textContent = navMenu.projects;
+  document.querySelector<HTMLAnchorElement>("#Contact-link")!.textContent = navMenu.contact;
 }
 
 // Choose the language
@@ -102,6 +97,10 @@ languageForm?.addEventListener("change", (e: Event) => {
   const target = e.target as HTMLInputElement;
   changeLanguage(target.value); // Change the language based on the selected radio button
   populateNavBar();
+  const activeComponent = document.querySelector(".active + a")?.id.split("-")[0]; //get Home || About || Projects || Contact
+  if (activeComponent) {
+    componentMap[activeComponent](language);
+  }
 });
 
 // Set the language
@@ -129,7 +128,6 @@ navElements.forEach((navElement) => {
     // Add event listeners for the hover effect - mousein
     navElement.addEventListener("mouseover", () => {
       bgImg.classList.remove("fade-out");
-
       bgImg.classList.add("fade-in");
     });
 
@@ -151,7 +149,9 @@ navElements.forEach((navElement) => {
       // Remove the fade-out class and add the
       // fade-in class to the clicked background image
       bgImg.classList.add("active");
-      logoImg?.classList.add("shrink")
+      logoImg?.classList.remove("magnify");
+      logoImg?.classList.add("shrink");
+
       const anchorId: string = navElement.querySelector("a")?.id as string;
       const linkedPage = anchorId.split("-")[0];
       componentMap[linkedPage](language);
@@ -159,4 +159,9 @@ navElements.forEach((navElement) => {
     });
   }
 
+});
+
+logoImg?.addEventListener("click", (e) => {
+  logoImg?.classList.add("magnify");
+  logoImg?.classList.remove("shrink");
 });
