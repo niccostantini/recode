@@ -7,6 +7,10 @@ import cyan from "./assets/images/cyan.svg";
 import yellow from "./assets/images/yellow.svg";
 import black from "./assets/images/black.svg";
 import { raw_languages } from "./language-handling";
+import About from "./about";
+import Home from "./home";
+import Projects from "./projects";
+import Contact from "./contact";
 const navElements = document.querySelectorAll(".nav-element");
 const logoImg = document.querySelector("#logo-img");
 const colorMap = {
@@ -14,6 +18,12 @@ const colorMap = {
     cyan,
     yellow,
     black,
+};
+const componentMap = {
+    About,
+    Home,
+    Projects,
+    Contact
 };
 const checkColor = (navElement) => {
     if (navElement.classList.contains("magenta"))
@@ -56,14 +66,10 @@ function highlightSelectedLanguage() {
 function populateNavBar() {
     const langData = raw_languages[language] || raw_languages["en"]; // Default to English if the user's language is not available
     const navMenu = langData.navMenu;
-    document.querySelector("#home-link").textContent = navMenu.home;
-    document.querySelector("#about-link").textContent = navMenu.about;
-    document.querySelector("#projects-link").textContent = navMenu.projects;
-    document.querySelector("#contact-link").textContent = navMenu.contact;
-}
-// Populate the <main> element with the selected language
-function populateMain() {
-    const main = document.querySelector("main");
+    document.querySelector("#Home-link").textContent = navMenu.home;
+    document.querySelector("#About-link").textContent = navMenu.about;
+    document.querySelector("#Projects-link").textContent = navMenu.projects;
+    document.querySelector("#Contact-link").textContent = navMenu.contact;
 }
 // Choose the language
 function getAndSetLanguage() {
@@ -81,9 +87,14 @@ function changeLanguage(lang) {
 // Event listener for the language radio buttons
 const languageForm = document.querySelector("#language-switch");
 languageForm === null || languageForm === void 0 ? void 0 : languageForm.addEventListener("change", (e) => {
+    var _a;
     const target = e.target;
     changeLanguage(target.value); // Change the language based on the selected radio button
     populateNavBar();
+    const activeComponent = (_a = document.querySelector(".active + a")) === null || _a === void 0 ? void 0 : _a.id.split("-")[0]; //get Home || About || Projects || Contact
+    if (activeComponent) {
+        componentMap[activeComponent](language);
+    }
 });
 // Set the language
 getAndSetLanguage();
@@ -115,6 +126,7 @@ navElements.forEach((navElement) => {
         });
         // Add event listeners for the click effect
         navElement.addEventListener("click", (e) => {
+            var _a;
             // Remove the active class from all the background images and add the fade-out class
             document.querySelectorAll(".bg-img.active").forEach((img) => {
                 img.classList.remove("active");
@@ -124,7 +136,15 @@ navElements.forEach((navElement) => {
             // Remove the fade-out class and add the
             // fade-in class to the clicked background image
             bgImg.classList.add("active");
+            logoImg === null || logoImg === void 0 ? void 0 : logoImg.classList.remove("magnify");
             logoImg === null || logoImg === void 0 ? void 0 : logoImg.classList.add("shrink");
+            const anchorId = (_a = navElement.querySelector("a")) === null || _a === void 0 ? void 0 : _a.id;
+            const linkedPage = anchorId.split("-")[0];
+            componentMap[linkedPage](language);
         });
     }
+});
+logoImg === null || logoImg === void 0 ? void 0 : logoImg.addEventListener("click", (e) => {
+    logoImg === null || logoImg === void 0 ? void 0 : logoImg.classList.add("magnify");
+    logoImg === null || logoImg === void 0 ? void 0 : logoImg.classList.remove("shrink");
 });

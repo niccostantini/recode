@@ -8,6 +8,9 @@ import yellow from "./assets/images/yellow.svg";
 import black from "./assets/images/black.svg";
 import { raw_languages } from "./language-handling";
 import About from "./about";
+import Home from "./home";
+import Projects from "./projects";
+import Contact from "./contact";
 
 
 const navElements: NodeListOf<HTMLLIElement> = document.querySelectorAll(".nav-element");
@@ -21,7 +24,10 @@ const colorMap: Record<string, string> = {
 };
 
 const componentMap: Record<string, any> = {
-  About
+  About,
+  Home,
+  Projects,
+  Contact
 }
 
 const checkColor = (navElement: HTMLLIElement) => {
