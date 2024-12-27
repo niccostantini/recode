@@ -7,6 +7,7 @@ import cyan from "./assets/images/cyan.svg";
 import yellow from "./assets/images/yellow.svg";
 import black from "./assets/images/black.svg";
 import { raw_languages } from "./language-handling";
+import About from "./about";
 
 
 const navElements: NodeListOf<HTMLLIElement> = document.querySelectorAll(".nav-element");
@@ -18,6 +19,10 @@ const colorMap: Record<string, string> = {
   yellow,
   black,
 };
+
+const componentMap: Record<string, any> = {
+  About
+}
 
 const checkColor = (navElement: HTMLLIElement) => {
   if (navElement.classList.contains("magenta")) return "magenta";
@@ -147,6 +152,11 @@ navElements.forEach((navElement) => {
       // fade-in class to the clicked background image
       bgImg.classList.add("active");
       logoImg?.classList.add("shrink")
+      const anchorId: string = navElement.querySelector("a")?.id as string;
+      const linkedPage = anchorId.split("-")[0];
+      componentMap[linkedPage](language);
+
     });
   }
+
 });
