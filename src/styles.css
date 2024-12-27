@@ -115,12 +115,19 @@ header {
         padding-top: 30px;
         position: sticky;
         top: 0;
+        cursor: pointer;
     }
 
     .shrink {
         -webkit-animation: shrink 0.5s forwards;
         -o-animation: shrink 0.5s forwards;
         animation: shrink 0.5s forwards;
+    }
+
+    .magnify {
+        -webkit-animation: magnify 0.5s forwards;
+        -o-animation: magnify 0.5s forwards;
+        animation: magnify 0.5s forwards;
     }
 
     nav ul {
