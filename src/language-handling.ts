@@ -9,9 +9,9 @@ interface NavMenu {
 // Define the interface for the "What I Do" section
 interface WhatIDo {
   title: string;
-  coding: string[];
-  design: string[];
-  sewing: string[];
+  coding: [string, string];
+  design: [string, string];
+  sewing: [string, string];
 }
 
 // Define the main About interface
@@ -198,4 +198,4 @@ const raw_languages: Record<string, LanguageData> = {
   }
 };
 
-export { NavMenu, LanguageData, raw_languages };
+export { NavMenu, LanguageData, raw_languages, WhatIDo, About };
