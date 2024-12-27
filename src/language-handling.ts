@@ -21,10 +21,16 @@ interface About {
   journey: string[];
 }
 
+interface ContactList {
+  title: string;
+  content: string;
+}
+
 interface LanguageData {
   navMenu: NavMenu;
   Main: string;
   About: About;
+  Contact: ContactList
 }
 
 
@@ -50,6 +56,10 @@ const raw_languages: Record<string, LanguageData> = {
         "Take, for example, the time I decided to sew a hoodie for my cousin. Ambitious and full of enthusiasm, I dove right in—only to realize I had stitched the hood incorrectly, resulting in her face being half-covered by fabric. What followed was a two-hour unpicking marathon, filled with swearing at stubborn threads and a newfound respect for sewing instructions. But did I make the same mistake again? No way! Instead, I learned the importance of patience, precision, and the beauty of embracing imperfections. This experience embodies the ReCode spirit: turning a misstep into a masterpiece.",
         "Our portfolio is a testament to resilience, creativity, and the endless pursuit of improvement. Every project you see here has its own story of trial, error, and triumph."
       ]
+    },
+    Contact: {
+      title: "Get in Touch",
+      content: "Why should you even reach out? I'm a great listener, I promise. Whether you have a project in mind, a question, or just want to chat, I'm all ears"
     }
   },
   fr: {
@@ -87,6 +97,10 @@ const raw_languages: Record<string, LanguageData> = {
         "Notre portfolio est un témoignage de résilience, de créativité et de la quête incessante d'amélioration. Chaque projet que vous voyez ici a sa propre histoire d'essais, d'erreurs et de triomphes."
       ]
     },
+    Contact: {
+      title: "Contactez-moi",
+      content: "Pourquoi devriez-vous me contacter ? Je suis un excellent auditeur, je le promets. Que vous ayez un projet en tête, une question, ou que vous vouliez simplement discuter, je suis tout ouïe."
+    }
   },
   it: {
     navMenu: {
@@ -122,6 +136,10 @@ const raw_languages: Record<string, LanguageData> = {
         "Prendi, per esempio, la volta in cui ho deciso di cucire una felpa per mio cugino. Ambizioso e pieno di entusiasmo, mi sono lanciato subito—solo per rendermi conto di aver cucito erroneamente la cappuccio, coprendo metà del volto con il tessuto. Ciò che è seguito è stato un maratona di due ore a sbrogliare, piena di bestemmie contro i fili ostinati e un nuovo rispetto per le istruzioni di cucito. Ma ho fatto di nuovo lo stesso errore? Assolutamente no! Invece, ho imparato l'importanza della pazienza, della precisione e la bellezza di abbracciare le imperfezioni. Questa esperienza incarna lo spirito di ReCode: trasformare un passo falso in un capolavoro.",
         "Il nostro portfolio è una testimonianza di resilienza, creatività e la continua ricerca del miglioramento. Ogni progetto che vedi qui ha la propria storia di prova, errore e trionfo."
       ]
+    },
+    Contact: {
+      title: "Mettiti in Contatto",
+      content: "Perché dovresti contattarmi? Sono un ottimo ascoltatore, lo prometto. Che tu abbia un progetto in mente, una domanda, o semplicemente voglia chiacchierare, sono tutto orecchi."
     }
   },
   es: {
@@ -158,6 +176,10 @@ const raw_languages: Record<string, LanguageData> = {
         "Tomemos, por ejemplo, la vez que decidí coser una sudadera con capucha para mi prima. Ambicioso y lleno de entusiasmo, me lancé de lleno—solo para darme cuenta de que había cosido la capucha incorrectamente, resultando en que su cara estuviera medio cubierta por la tela. Lo que siguió fue un maratón de dos horas deshaciendo costuras, lleno de maldiciones hacia hilos obstinados y un nuevo respeto por las instrucciones de costura. ¿Pero volví a cometer el mismo error? ¡De ninguna manera! En su lugar, aprendí la importancia de la paciencia, la precisión y la belleza de abrazar las imperfecciones. Esta experiencia encarna el espíritu de ReCode: convertir un tropiezo en una obra maestra.",
         "Nuestro portafolio es un testamento a la resiliencia, la creatividad y la búsqueda interminable de la mejora. Cada proyecto que ves aquí tiene su propia historia de prueba, error y triunfo."
       ]
+    },
+    Contact: {
+      title: "Contáctame",
+      content: "¿Por qué deberías contactarme? Soy un gran oyente, lo prometo. Ya sea que tengas un proyecto en mente, una pregunta, o simplemente quieras charlar, estoy todo oídos."
     }
   },
   ar: {
@@ -194,6 +216,10 @@ const raw_languages: Record<string, LanguageData> = {
         "خذ على سبيل المثال المرة التي قررت فيها خياطة سترة قطنية لابن عمي. بطموح وحماس، انطلقت على الفور—فقط لأدرك أنني خيطت القلنسوة بشكل غير صحيح، مما أدى إلى تغطية نصف وجهه بالقماش. ما تلا ذلك كان ماراثون فك الخياطة لمدة ساعتين، مليء بالشتم على الخيوط العنيدة واحترام جديد لتعليمات الخياطة. لكن هل ارتكبت نفس الخطأ مرة أخرى؟ بالتأكيد لا! بدلاً من ذلك، تعلمت أهمية الصبر والدقة وجمال احتضان العيوب. تجسد هذه التجربة روح ReCode: تحويل الخطأ إلى تحفة فنية.",
         "محفظتنا هي شهادة على الصمود والإبداع والسعي المستمر للتحسين. كل مشروع تراه هنا له قصته الخاصة من التجربة والخطأ والانتصار."
       ]
+    },
+    Contact: {
+      title: "تواصل معنا",
+      content: "لماذا يجب عليك التواصل؟ أنا مستمع ممتاز، أعدك. سواء كان لديك مشروع في ذهنك، أو سؤال، أو كنت ترغب فقط في الدردشة، فأنا هنا للاستماع."
     }
   }
 };
