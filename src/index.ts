@@ -1,11 +1,16 @@
+// Import styles
 import "./styles.css";
 import "./normalize.css";
+
+// Import images
 import "./assets/images/logo.svg";
 import "./assets/images/language.svg";
 import magenta from "./assets/images/magenta.svg";
 import cyan from "./assets/images/cyan.svg";
 import yellow from "./assets/images/yellow.svg";
 import black from "./assets/images/black.svg";
+
+// Import components
 import { raw_languages } from "./language-handling";
 import About from "./about";
 import Home from "./home";
@@ -54,8 +59,7 @@ languageSwitchRadio?.addEventListener("mouseout", () => {
   languageSwitchRadio.classList.add("hide");
 });
 
-
-let language: string = "en"; //DEFAULT LANGUAGE
+let language: string = "en"; /** DEFAULT LANGUAGE */
 
 // Get the user's language
 function getUserLang(): void {
@@ -105,7 +109,7 @@ languageForm?.addEventListener("change", (e: Event) => {
   populateNavBar();
   const activeComponent = document.querySelector(".active + a")?.id.split("-")[0]; //get Home || About || Projects || Contact
   if (activeComponent) {
-    componentMap[activeComponent](language);
+    componentMap[activeComponent](language); // Populate the main content with the selected language
   }
 });
 
@@ -167,6 +171,7 @@ navElements.forEach((navElement) => {
 
 });
 
+// Add event listener for the logo image to magnify it when clicked
 logoImg?.addEventListener("click", (e) => {
   logoImg?.classList.add("magnify");
   logoImg?.classList.remove("shrink");
