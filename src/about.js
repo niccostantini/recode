@@ -1,5 +1,10 @@
 import { raw_languages } from "./language-handling";
 const main = document.querySelector("main");
+/**
+ * Populates the main content of the home page with the specified language.
+ *
+ * @param {string} lang - The language code to use for populating the content.
+ */
 const populate = (lang) => {
     const langData = raw_languages[lang] || raw_languages["en"];
     const about = langData.About;

@@ -2,6 +2,11 @@ import { raw_languages, WhatIDo } from "./language-handling";
 
 const main = document.querySelector<HTMLDivElement>("main");
 
+/**
+ * Populates the main content of the home page with the specified language.
+ *
+ * @param {string} lang - The language code to use for populating the content.
+ */
 const populate = (lang: string): void => {
   const langData = raw_languages[lang] || raw_languages["en"];
   const about = langData.About;
