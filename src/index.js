@@ -1,11 +1,15 @@
+// Import styles
 import "./styles.css";
 import "./normalize.css";
+// Import images
+import "./assets/images/arrow.gif";
 import "./assets/images/logo.svg";
 import "./assets/images/language.svg";
 import magenta from "./assets/images/magenta.svg";
 import cyan from "./assets/images/cyan.svg";
 import yellow from "./assets/images/yellow.svg";
 import black from "./assets/images/black.svg";
+// Import components
 import { raw_languages } from "./language-handling";
 import About from "./about";
 import Home from "./home";
@@ -37,6 +41,16 @@ const checkColor = (navElement) => {
     else
         return "black";
 };
+const backdrop = document.querySelector(".backdrop");
+const languageInstructions = document.querySelector("#language-instructions");
+document.addEventListener("click", () => {
+    backdrop.classList.add("fade-out");
+    languageInstructions.classList.add("fade-out");
+    setTimeout(() => {
+        backdrop.style.display = "none";
+        languageInstructions.style.display = "none";
+    }, 550);
+});
 /********** ************/
 /** LANGUAGE SELECTION */
 /********** ************/
@@ -50,7 +64,7 @@ languageSwitchRadio === null || languageSwitchRadio === void 0 ? void 0 : langua
     languageSwitchRadio.classList.remove("expand");
     languageSwitchRadio.classList.add("hide");
 });
-let language = "en"; //DEFAULT LANGUAGE
+let language = "en"; /** DEFAULT LANGUAGE */
 // Get the user's language
 function getUserLang() {
     language = navigator.language.split('-')[0]; // Get the language code (e.g., 'en' from 'en-US')
@@ -93,7 +107,7 @@ languageForm === null || languageForm === void 0 ? void 0 : languageForm.addEven
     populateNavBar();
     const activeComponent = (_a = document.querySelector(".active + a")) === null || _a === void 0 ? void 0 : _a.id.split("-")[0]; //get Home || About || Projects || Contact
     if (activeComponent) {
-        componentMap[activeComponent](language);
+        componentMap[activeComponent](language); // Populate the main content with the selected language
     }
 });
 // Set the language
@@ -144,6 +158,7 @@ navElements.forEach((navElement) => {
         });
     }
 });
+// Add event listener for the logo image to magnify it when clicked
 logoImg === null || logoImg === void 0 ? void 0 : logoImg.addEventListener("click", (e) => {
     logoImg === null || logoImg === void 0 ? void 0 : logoImg.classList.add("magnify");
     logoImg === null || logoImg === void 0 ? void 0 : logoImg.classList.remove("shrink");

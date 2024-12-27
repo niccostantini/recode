@@ -3,6 +3,7 @@ import "./styles.css";
 import "./normalize.css";
 
 // Import images
+import "./assets/images/arrow.gif";
 import "./assets/images/logo.svg";
 import "./assets/images/language.svg";
 import magenta from "./assets/images/magenta.svg";
@@ -42,6 +43,18 @@ const checkColor = (navElement: HTMLLIElement) => {
   else if (navElement.classList.contains("black")) return "black";
   else return "black";
 }
+
+const backdrop = document.querySelector<HTMLDivElement>(".backdrop") as HTMLDivElement;
+const languageInstructions = document.querySelector<HTMLDivElement>("#language-instructions") as HTMLDivElement;
+document.addEventListener("click", () => {
+  backdrop.classList.add("fade-out");
+  languageInstructions.classList.add("fade-out");
+  setTimeout(() => {
+    backdrop.style.display = "none";
+    languageInstructions.style.display = "none";
+  }, 550);
+});
+
 
 /********** ************/
 /** LANGUAGE SELECTION */
