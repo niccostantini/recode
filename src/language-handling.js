@@ -30,14 +30,16 @@ const raw_languages = {
             {
                 title: "ControCoro",
                 image: ControCoro,
-                description: ["Since I could not find a choir that had times compatible with mine, I decided to whip out a director from my magic hat and founded one.", "ControCoro (lit. 'CounterChoir') is open to anyone, provided they are not completely tone-deaf. We meet once a week to sing, laugh, and occasionally cry over the high notes."],
+                description: ["Since I could not find a choir that had times compatible with mine, I decided to whip out a director from my magic hat and founded one.",
+                    "ControCoro (lit. 'CounterChoir') is open to anyone, provided they are not completely tone-deaf. We meet once a week to sing, laugh, and occasionally cry over the high notes.",
+                    "I used Vanilla JavaScript – no TypeScript! – and GitHub Pages as hosting. The website is in Italian, but you can still check it out!"],
                 link: "https://controcoro.info"
             },
             {
                 title: "ReCode",
                 image: ReCode,
                 description: ["ReCode is my own portfolio website. For now, it is a static showcase of my work.", "It is realised using pure JavaScript/TypeScript, HTML and CSS. "],
-                link: "#"
+                link: "https://niccostantini.github.io/recode"
             }
         ]
     },
@@ -86,7 +88,8 @@ const raw_languages = {
                 image: ControCoro,
                 description: [
                     "Comme je n'ai pas pu trouver une chorale dont les horaires étaient compatibles avec les miens, j'ai décidé de sortir un directeur de mon chapeau magique et d'en fonder une.",
-                    "ControCoro (litt. 'Chorale Contre') est ouverte à tous, à condition qu'ils ne soient pas complètement sourds au ton. Nous nous réunissons une fois par semaine pour chanter, rire et parfois pleurer sur les notes aiguës."
+                    "ControCoro (litt. 'Chorale Contre') est ouverte à tous, à condition qu'ils ne soient pas complètement sourds au ton. Nous nous réunissons une fois par semaine pour chanter, rire et parfois pleurer sur les notes aiguës.",
+                    "J'ai utilisé Vanilla JavaScript – pas de TypeScript ! – et GitHub Pages comme hébergement. Le site est en italien, mais vous pouvez quand même le consulter !"
                 ],
                 link: "https://controcoro.info"
             },
@@ -97,7 +100,7 @@ const raw_languages = {
                     "ReCode est mon propre site web de portfolio. Pour l'instant, c'est une vitrine statique de mon travail.",
                     "Il est réalisé en utilisant JavaScript/TypeScript pur, HTML et CSS."
                 ],
-                link: "#"
+                link: "https://niccostantini.github.io/recode"
             }
         ],
     },
@@ -146,7 +149,8 @@ const raw_languages = {
                 image: ControCoro,
                 description: [
                     "Poiché non sono riuscito a trovare un coro con orari compatibili con i miei, ho deciso di tirare fuori un direttore dal mio cappello magico e ne ho fondato uno.",
-                    "ControCoro (lit. 'Coro Contro') è aperto a chiunque, a condizione che non sia completamente sordo al tono. Ci incontriamo una volta alla settimana per cantare, ridere e occasionalmente piangere sulle note alte."
+                    "ControCoro è aperto a chiunque, a condizione che non sia completamente sordo al tono. Ci incontriamo una volta alla settimana per cantare, ridere e occasionalmente piangere sulle note alte.",
+                    "Ho usato Vanilla JavaScript – niente TypeScript! – e GitHub Pages come hosting. Il sito web è in italiano – viva!"
                 ],
                 link: "https://controcoro.info"
             },
@@ -157,7 +161,7 @@ const raw_languages = {
                     "ReCode è il mio sito web portfolio personale. Per ora, è una vetrina statica del mio lavoro.",
                     "È realizzato utilizzando puro JavaScript/TypeScript, HTML e CSS."
                 ],
-                link: "#"
+                link: "https://niccostantini.github.io/recode"
             }
         ]
     },
@@ -206,7 +210,8 @@ const raw_languages = {
                 image: ControCoro,
                 description: [
                     "Como no pude encontrar un coro que tuviera horarios compatibles con los míos, decidí sacar un director de mi sombrero mágico y fundar uno.",
-                    "ControCoro (lit. 'Coro Contrario') está abierto a cualquiera, siempre que no sea completamente sordo al tono. Nos reunimos una vez a la semana para cantar, reír y ocasionalmente llorar por las notas altas."
+                    "ControCoro (lit. 'Coro Contrario') está abierto a cualquiera, siempre que no sea completamente sordo al tono. Nos reunimos una vez a la semana para cantar, reír y ocasionalmente llorar por las notas altas.",
+                    "¡Usé Vanilla JavaScript – sin TypeScript! – y GitHub Pages como hosting. El sitio web está en italiano, ¡pero aún puedes echarle un vistazo!"
                 ],
                 link: "https://controcoro.info"
             },
@@ -217,7 +222,7 @@ const raw_languages = {
                     "ReCode es mi propio sitio web de portafolio. Por ahora, es una exhibición estática de mi trabajo.",
                     "Está realizado utilizando JavaScript/TypeScript, HTML y CSS puros."
                 ],
-                link: "#"
+                link: "https://niccostantini.github.io/recode"
             }
         ]
     },
@@ -266,7 +271,8 @@ const raw_languages = {
                 image: ControCoro,
                 description: [
                     "نظرًا لأنني لم أتمكن من العثور على جوقة أوقاتها متوافقة مع جدولي، قررت أن أسحب مخرجًا من قبعة سحرية وأسس واحدة.",
-                    "ControCoro (حرفيًا 'جوقة معاكسة') مفتوحة لأي شخص، بشرط ألا يكون أعورًا تمامًا. نحن نلتقي مرة واحدة في الأسبوع للغناء والضحك وأحيانًا البكاء على النوتات العالية."
+                    "ControCoro (حرفيًا 'جوقة معاكسة') مفتوحة لأي شخص، بشرط ألا يكون أعورًا تمامًا. نحن نلتقي مرة واحدة في الأسبوع للغناء والضحك وأحيانًا البكاء على النوتات العالية.",
+                    "استخدمت Vanilla JavaScript – بدون TypeScript! – وGitHub Pages كاستضافة. الموقع باللغة الإيطالية، ولكن لا يزال بإمكانك الاطلاع عليه!"
                 ],
                 link: "https://controcoro.info"
             },
@@ -277,7 +283,7 @@ const raw_languages = {
                     "ReCode هو موقع الويب الخاص بمحفظتي. في الوقت الحالي، هو عرض ثابت لأعمالي.",
                     "تم تنفيذه باستخدام JavaScript/TypeScript وHTML وCSS النقية."
                 ],
-                link: "#"
+                link: "https://niccostantini.github.io/recode"
             }
         ]
     }
