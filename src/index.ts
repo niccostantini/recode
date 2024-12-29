@@ -5,7 +5,7 @@ import "./normalize.css";
 // Import images
 import "./assets/images/arrow.gif";
 import "./assets/images/logo.svg";
-import "./assets/images/language.svg";
+import ReCode from "./assets/images/language.svg";
 import magenta from "./assets/images/magenta.svg";
 import cyan from "./assets/images/cyan.svg";
 import yellow from "./assets/images/yellow.svg";
@@ -106,12 +106,32 @@ function getAndSetLanguage(): void {
   highlightSelectedLanguage();
 }
 
+function setTextDirection(lang: string): void {
+  const main = document.querySelector<HTMLElement>("main") as HTMLElement;
+  const textElements = main.querySelectorAll<HTMLElement>("div");
+  console.log(lang);
+  if (lang === "ar") {
+    textElements.forEach((element) => {
+      console.log(`Set direction of element ${element.classList} to rtl`);
+      element.style.direction = "rtl";
+      element.classList.add("rtl-text");
+    })
+  } else {
+      textElements.forEach((element) => {
+        element.style.direction = "ltr";
+        element.classList.remove("rtl-text");
+      });
+    }
+  }
+
+
 // Change the language
 function changeLanguage(lang: string): void {
   language = lang;
   console.log(lang + " " + language)
   populateNavBar();
   highlightSelectedLanguage();
+  setTextDirection(lang);
 }
 
 // Event listener for the language radio buttons
@@ -123,6 +143,7 @@ languageForm?.addEventListener("change", (e: Event) => {
   const activeComponent = document.querySelector(".active + a")?.id.split("-")[0]; //get Home || About || Projects || Contact
   if (activeComponent) {
     componentMap[activeComponent](language); // Populate the main content with the selected language
+    setTextDirection(language)
   }
 });
 
@@ -178,9 +199,9 @@ navElements.forEach((navElement) => {
       const anchorId: string = navElement.querySelector("a")?.id as string;
       const linkedPage = anchorId.split("-")[0];
       componentMap[linkedPage](language);
-
+      setTextDirection(language);
     });
-  }
+  };
 
 });
 

@@ -4,7 +4,6 @@ import "./normalize.css";
 // Import images
 import "./assets/images/arrow.gif";
 import "./assets/images/logo.svg";
-import "./assets/images/language.svg";
 import magenta from "./assets/images/magenta.svg";
 import cyan from "./assets/images/cyan.svg";
 import yellow from "./assets/images/yellow.svg";
@@ -91,12 +90,31 @@ function getAndSetLanguage() {
     populateNavBar();
     highlightSelectedLanguage();
 }
+function setTextDirection(lang) {
+    const main = document.querySelector("main");
+    const textElements = main.querySelectorAll("div");
+    console.log(lang);
+    if (lang === "ar") {
+        textElements.forEach((element) => {
+            console.log(`Set direction of element ${element.classList} to rtl`);
+            element.style.direction = "rtl";
+            element.classList.add("rtl-text");
+        });
+    }
+    else {
+        textElements.forEach((element) => {
+            element.style.direction = "ltr";
+            element.classList.remove("rtl-text");
+        });
+    }
+}
 // Change the language
 function changeLanguage(lang) {
     language = lang;
     console.log(lang + " " + language);
     populateNavBar();
     highlightSelectedLanguage();
+    setTextDirection(lang);
 }
 // Event listener for the language radio buttons
 const languageForm = document.querySelector("#language-switch");
@@ -108,6 +126,7 @@ languageForm === null || languageForm === void 0 ? void 0 : languageForm.addEven
     const activeComponent = (_a = document.querySelector(".active + a")) === null || _a === void 0 ? void 0 : _a.id.split("-")[0]; //get Home || About || Projects || Contact
     if (activeComponent) {
         componentMap[activeComponent](language); // Populate the main content with the selected language
+        setTextDirection(language);
     }
 });
 // Set the language
@@ -155,8 +174,10 @@ navElements.forEach((navElement) => {
             const anchorId = (_a = navElement.querySelector("a")) === null || _a === void 0 ? void 0 : _a.id;
             const linkedPage = anchorId.split("-")[0];
             componentMap[linkedPage](language);
+            setTextDirection(language);
         });
     }
+    ;
 });
 // Add event listener for the logo image to magnify it when clicked
 logoImg === null || logoImg === void 0 ? void 0 : logoImg.addEventListener("click", (e) => {
