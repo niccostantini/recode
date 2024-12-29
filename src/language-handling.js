@@ -1,3 +1,5 @@
+import ControCoro from "./assets/images/controcoro.gif";
+import ReCode from "./assets/images/logo.svg";
 const raw_languages = {
     en: {
         navMenu: {
@@ -26,14 +28,16 @@ const raw_languages = {
         },
         Portfolio: [
             {
-                title: "ContrCoro",
-                image: "./assets/images/contrcoro.gif",
-                description: ["Since I could not find a choir that had times compatible with mine, I decided to whip out a director from my magic hat and founded one.", "ControCoro (lit. 'CounterChoir') is open to anyone, provided they are not completely tone-deaf. We meet once a week to sing, laugh, and occasionally cry over the high notes."]
+                title: "ControCoro",
+                image: ControCoro,
+                description: ["Since I could not find a choir that had times compatible with mine, I decided to whip out a director from my magic hat and founded one.", "ControCoro (lit. 'CounterChoir') is open to anyone, provided they are not completely tone-deaf. We meet once a week to sing, laugh, and occasionally cry over the high notes."],
+                link: "https://controcoro.info"
             },
             {
                 title: "ReCode",
-                image: "./assets/images/recode.jpg",
-                description: ["ReCode is my own portfolio website. For now, it is a static showcase of my work.", "It is realised using pure JavaScript/TypeScript, HTML and CSS. "]
+                image: ReCode,
+                description: ["ReCode is my own portfolio website. For now, it is a static showcase of my work.", "It is realised using pure JavaScript/TypeScript, HTML and CSS. "],
+                link: "#"
             }
         ]
     },
@@ -78,22 +82,24 @@ const raw_languages = {
         },
         Portfolio: [
             {
-                title: "ContrCoro",
-                image: "./assets/images/contrcoro.gif",
+                title: "ControCoro",
+                image: ControCoro,
                 description: [
                     "Comme je n'ai pas pu trouver une chorale dont les horaires étaient compatibles avec les miens, j'ai décidé de sortir un directeur de mon chapeau magique et d'en fonder une.",
                     "ControCoro (litt. 'Chorale Contre') est ouverte à tous, à condition qu'ils ne soient pas complètement sourds au ton. Nous nous réunissons une fois par semaine pour chanter, rire et parfois pleurer sur les notes aiguës."
-                ]
+                ],
+                link: "https://controcoro.info"
             },
             {
                 title: "ReCode",
-                image: "./assets/images/recode.jpg",
+                image: ReCode,
                 description: [
                     "ReCode est mon propre site web de portfolio. Pour l'instant, c'est une vitrine statique de mon travail.",
                     "Il est réalisé en utilisant JavaScript/TypeScript pur, HTML et CSS."
-                ]
+                ],
+                link: "#"
             }
-        ]
+        ],
     },
     it: {
         navMenu: {
@@ -136,20 +142,22 @@ const raw_languages = {
         },
         Portfolio: [
             {
-                title: "ContrCoro",
-                image: "./assets/images/contrcoro.gif",
+                title: "ControCoro",
+                image: ControCoro,
                 description: [
                     "Poiché non sono riuscito a trovare un coro con orari compatibili con i miei, ho deciso di tirare fuori un direttore dal mio cappello magico e ne ho fondato uno.",
                     "ControCoro (lit. 'Coro Contro') è aperto a chiunque, a condizione che non sia completamente sordo al tono. Ci incontriamo una volta alla settimana per cantare, ridere e occasionalmente piangere sulle note alte."
-                ]
+                ],
+                link: "https://controcoro.info"
             },
             {
                 title: "ReCode",
-                image: "./assets/images/recode.jpg",
+                image: ReCode,
                 description: [
                     "ReCode è il mio sito web portfolio personale. Per ora, è una vetrina statica del mio lavoro.",
                     "È realizzato utilizzando puro JavaScript/TypeScript, HTML e CSS."
-                ]
+                ],
+                link: "#"
             }
         ]
     },
@@ -194,20 +202,22 @@ const raw_languages = {
         },
         Portfolio: [
             {
-                title: "ContrCoro",
-                image: "./assets/images/contrcoro.gif",
+                title: "ControCoro",
+                image: ControCoro,
                 description: [
                     "Como no pude encontrar un coro que tuviera horarios compatibles con los míos, decidí sacar un director de mi sombrero mágico y fundar uno.",
                     "ControCoro (lit. 'Coro Contrario') está abierto a cualquiera, siempre que no sea completamente sordo al tono. Nos reunimos una vez a la semana para cantar, reír y ocasionalmente llorar por las notas altas."
-                ]
+                ],
+                link: "https://controcoro.info"
             },
             {
                 title: "ReCode",
-                image: "./assets/images/recode.jpg",
+                image: ReCode,
                 description: [
                     "ReCode es mi propio sitio web de portafolio. Por ahora, es una exhibición estática de mi trabajo.",
                     "Está realizado utilizando JavaScript/TypeScript, HTML y CSS puros."
-                ]
+                ],
+                link: "#"
             }
         ]
     },
@@ -252,20 +262,22 @@ const raw_languages = {
         },
         Portfolio: [
             {
-                title: "ContrCoro",
-                image: "./assets/images/contrcoro.gif",
+                title: "ControCoro",
+                image: ControCoro,
                 description: [
                     "نظرًا لأنني لم أتمكن من العثور على جوقة أوقاتها متوافقة مع جدولي، قررت أن أسحب مخرجًا من قبعة سحرية وأسس واحدة.",
                     "ControCoro (حرفيًا 'جوقة معاكسة') مفتوحة لأي شخص، بشرط ألا يكون أعورًا تمامًا. نحن نلتقي مرة واحدة في الأسبوع للغناء والضحك وأحيانًا البكاء على النوتات العالية."
-                ]
+                ],
+                link: "https://controcoro.info"
             },
             {
                 title: "ReCode",
-                image: "./assets/images/recode.jpg",
+                image: ReCode,
                 description: [
                     "ReCode هو موقع الويب الخاص بمحفظتي. في الوقت الحالي، هو عرض ثابت لأعمالي.",
                     "تم تنفيذه باستخدام JavaScript/TypeScript وHTML وCSS النقية."
-                ]
+                ],
+                link: "#"
             }
         ]
     }
